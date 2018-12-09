@@ -1,11 +1,23 @@
 from taskQueue import FuncNode, BaseQueue, queue_from_list
 
-def a(x):
-    return x + 10
+def event(msg):
+    return int(input(msg))
 
-l = [lambda : [1,2,3,4], lambda x: sum(x), lambda x: x*2]
+
+def sum_list(l, b):
+    return sum(l)
+
+def pow2(n):
+    return n ** 2
+
+def mul10(n):
+    return n * 10
+
+
+l = [event, pow2, mul10]
 
 q = queue_from_list(l)
-q.root.insert(FuncNode(a))
 
 q.print()
+
+print( q.run("Nb: ") )

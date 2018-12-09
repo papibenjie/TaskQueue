@@ -8,7 +8,7 @@ class BaseQueue(object):
         self.root = root
 
     def run(self, *args, **kwargs):
-        return self.root.run()
+        return self.root.run(*args, **kwargs)
 
     @property
     def root(self):
